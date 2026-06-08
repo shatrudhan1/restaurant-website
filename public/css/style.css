@@ -1,0 +1,161 @@
+/* रीसेट और बेस स्टाइल (Reset & Base Styles) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ग्लोबल वेरिएबल्स - रंग और साइज */
+:root {
+    --primary: #2563eb;       /* मुख्य नीला रंग */
+    --primary-dark: #1d4ed8;  /* गहरा नीला रंग */
+    --text-main: #1f2937;     /* मुख्य टेक्स्ट का रंग */
+    --text-muted: #4b5563;    /* हल्का टेक्स्ट का रंग */
+    --bg-light: #f9fafb;      /* बैकग्राउंड का हल्का रंग */
+    --card-bg: #ffffff;       /* कार्ड का बैकग्राउंड */
+    --border: #e5e7eb;        /* बॉर्डर का रंग */
+    --max-width: 1200px;      /* वेबसाइट की अधिकतम चौड़ाई */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* लेआउट कंटेनर */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* हेडर और नेविगेशन (Menu Bar) */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* हीरो सेक्शन (मुख्य बैनर) */
+.hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: linear-gradient(180deg, #eff6ff 0%, var(--bg-light) 100%);
+}
+
+.hero h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* ग्रिड और कार्ड्स (बिज़नेस आइडियाज दिखाने के लिए) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* छोटे टैग्स जैसे (Low Investment, Work From Home) */
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: #dbeafe;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+/* फुटर (Footer) */
+footer {
+    background: var(--text-main);
+    color: #9ca3af;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* मोबाइल के लिए सेटिंग (Responsive Design) */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .nav-links { display: none; } 
+}
